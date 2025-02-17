@@ -35,8 +35,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 });
 
-Route::middleware(['api', 'web'])->group(function () {
-    Route::post('/chatbot/message', [ChatbotController::class, 'sendMessage']);
-});
+Route::post('/chatbot', [ChatbotController::class, 'handle']);
+
 
 
