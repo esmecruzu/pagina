@@ -9,14 +9,14 @@ class Cita extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'horario_id', 'motivo', 'status'];
+    protected $fillable = ['id','user_id', 'horario_id', 'motivo', 'status'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    
+
     public function horario()
     {
         return $this->belongsTo(Horario::class);
