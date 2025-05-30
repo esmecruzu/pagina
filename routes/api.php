@@ -31,7 +31,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware('role:admin')->group(function () {
         Route::post('/horarios', [HorarioController::class, 'store']);
         Route::get('/horarios', [HorarioController::class, 'index']);
-        Route::get('eliminar/horario/{id}', [HorarioController::class, 'eliminarHorario']);
+        Route::delete('eliminar/horario/{id}', [HorarioController::class, 'eliminarHorario']);
         Route::put('/horarios/{id}/status', [HorarioController::class, 'updateStatus']);
         Route::put('/modificarcitas/{id}', [CitasController::class, 'modificarStatus']);
         Route::get('/citas/canceladas', [CitasController::class, 'verCitasCanceladas']);
